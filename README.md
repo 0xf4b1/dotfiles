@@ -1,0 +1,2 @@
+# dotfiles
+bspwm + polybar
