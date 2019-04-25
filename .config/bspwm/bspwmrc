@@ -1,0 +1,21 @@
+#!/bin/sh
+
+sxhkd &
+
+bspc config window_gap 0
+
+# workspaces and polybar on each monitor
+for monitor in $MONITORS
+do
+  bspc monitor $monitor -d web chat term code music
+  MONITOR=$monitor right="volume cpu memory temperature wlan date powermenu" polybar top &
+done
+
+# background
+#feh --bg-fill images/Arch-Linux-Wallpaper-01-1920x1080.jpg
+
+# transparency, shadow, fade
+#compton -b
+
+# intellij, java
+wmname LG3D
